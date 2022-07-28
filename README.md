@@ -2,16 +2,16 @@
 
 **Performs a backup of all WSL2 distros to named & dated .tar files in a specified directory.**
 
-The process consists of a single PowerShell script (`BackupWSL2.ps1`), that reads configuration variables from an associated JSON file (`WSL2Backup-Configuration.json`), and is triggered on a recurring schedule by Windows Task Scheduler. It queries WSL for all Linux instances, and performs a backup (to a .tar file) of all discovered instances.
+The process consists of a single PowerShell script (`BackupWSL2.ps1`), that reads configuration variables from an associated JSON file (`WSL2Backup-Configuration.json`), and is triggered on a recurring schedule by Windows Task Scheduler. It queries WSL2 for all Linux instances, and performs a backup (to a .tar file) of each discovered instance.
 
-The default schedule is to run the task every Monday morning at 7:00am - but this should be modified to suit your personal working style and requirements. If the scheduled start is missed (e.g. the computer is not powered on), then it will try to run as soon as possible.
+The default schedule is to run the task every Monday morning at 7:00am - but this should be modified to suit your personal working style and requirements. If a scheduled start is missed (e.g. the computer is not powered on), then it will try to run as soon as possible.
 
 The task only runs when the user is logged on, and runs as the logged-on user. It should appear as a standard PowerShell window, which closes once finished. The process needs to stop WSL services whilst taking the backup - so you won't be able to start a shell until it's finished, and the window is closed.
 
 
 ##
 ### Installation Procedure
-1. Pull all files from this repo to a local directory accessible from Windows (i.e. not inside any of the WSL instances).
+1. Pull all files from this repo to a local directory accessible from Windows (i.e. not inside any of the WSL2 instances).
 
 2. Edit the contents of `WSL2Backup-Configuration.json` as per your requirements - in particular, take note of the **BackupPath** value, where the backup .tar files will be written to *(see below for details)*.
 
@@ -26,7 +26,7 @@ The task only runs when the user is logged on, and runs as the logged-on user. I
 7. Click **OK** to save and activate the schedule.
 
 ##
-### Contents of *WSL2Backup-Configuration.json*
+### Configuration values defined in *WSL2Backup-Configuration.json*
 
 - **BackupPath:** Path to store the backups in. *(Default: `C:\Store\WSL-Backup`)*
 
