@@ -2,7 +2,7 @@
 
 **Performs a backup of all WSL2 distros to named & dated .tar files in a specified directory.**
 
-1. Pull all 3x files from this repo to a local directory.
+1. Pull all files from this repo to a local directory.
 
 2. Edit the contents of `WSL2Backup-Configuration.json` as per your requirements *(see below for details)*.
 
@@ -10,9 +10,11 @@
 
 4. Navigate to the path you downloaded the files to, and select `Backup WSL2.xml`. Click **Open**.
 
-5. Select **Triggers**, and edit the *Weekly* trigger to meet your requirements.
+5. Select **Triggers**, double-click on the *Weekly* trigger, and change it to meet your requirements.
 
-6. Click **OK** to save and activate the schedule.
+6. Select **Actions**, double-click on the **Start a program** action, and edit the *Start in* path to point to the local directory that holds the .PS1 script file.
+
+7. Click **OK** to save and activate the schedule.
 
 ##
 ### Contents of *WSL2Backup-Configuration.json*
