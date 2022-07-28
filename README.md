@@ -2,9 +2,9 @@
 
 **Performs a backup of all WSL2 distros to named & dated .tar files in a specified directory.**
 
-The process consists of a single PowerShell script, that reads configuration variables from an associated JSON file, and is triggered on a recurring schedule by Windows Task Scheduler.
+The process consists of a single PowerShell script (`BackupWSL2.ps1`), that reads configuration variables from an associated JSON file (`WSL2Backup-Configuration.json`), and is triggered on a recurring schedule by Windows Task Scheduler. It queries WSL for all Linux instances, and performs a backup (to a .tar file) of all discovered instances.
 
-The default schedule is to run the task every Monday morning at 7:00am. If the scheduled start is missed (e.g. the computer is not on), then it will try to run as soon as possible.
+The default schedule is to run the task every Monday morning at 7:00am - but this should be modified to suit your personal working style and requirements. If the scheduled start is missed (e.g. the computer is not powered on), then it will try to run as soon as possible.
 
 The task only runs when the user is logged on, and runs as the logged-on user. It should appear as a standard PowerShell window, which closes once finished. The process needs to stop WSL services whilst taking the backup - so you won't be able to start a shell until it's finished, and the window is closed.
 
