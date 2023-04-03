@@ -1,7 +1,7 @@
 {
     "BackupPath": "C:\\Store\\WSL-Backup",
 
-    "AgeOfBackupsToDelete": 30,
+    "AgeOfBackupsToDelete": 14,
     "MinNumOfBackupsToKeep": 1,
 
     "LogPath": "C:\\Store\\WSL-Backup\\Logs",

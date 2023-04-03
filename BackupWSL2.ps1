@@ -226,7 +226,7 @@ If ($?) {
 # ---------------------------------------------
 
 # --- Delete old backups
-Clear-OldFiles -Path $strBackupPath -Age $intAgeOfBackupsToDelete -MinFilesToKeep $inMinNumOfBackupsToKeep -FileMask 'WSL2 Backup - *.tar'
+Clear-OldFiles -Path $strBackupPath -Age $intAgeOfBackupsToDelete -MinFilesToKeep $intMinNumOfBackupsToKeep -FileMask 'WSL2 Backup - *.tar'
 
 # --- Delete old Transcript log files
 Clear-OldFiles -Path $strLogPath -Age $intAgeOfOldLogFilesToDelete -FileMask 'Transcript-*.txt'
