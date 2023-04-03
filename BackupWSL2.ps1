@@ -136,8 +136,8 @@ Author: Matthew Hilzinger
             If ($arrOldFilesForDeletion -is [Array]) {
                 Write-Output "Clearing files older than $Age days from directory '$Path'"
                 ForEach ($objFile in $arrOldFilesForDeletion) {
-                    Write-Output "Deleting old log file '$($objFile.FullName)'."
-                    # $objFile.Delete()
+                    Write-Output "Deleting old file '$($objFile.FullName)'."
+                    $objFile.Delete()
                 }
             }
         } Else {
